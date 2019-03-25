@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Criterios - Técnicas WCAG 2.1</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <style type="text/css">
+            @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+            @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+            @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+            body { font-family: 'Droid Serif'; }
+            h1, h2, h3 {
+                font-family: 'Yanone Kaffeesatz';
+                font-weight: normal;
+            }
+            .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+            .red { color: #fa0000; }
+            .footnote {
+                position: absolute;
+                bottom: 3em;
+            }
+            code {
+                background: #e7e8e2;
+                border-radius: 5px;
+            }
+            .inverse {
+                background: #272822;
+                color: #777872;
+                text-shadow: 0 0 20px #333;
+            }
+            .inverse h1, .inverse h2 {
+                color: #f3f3f3;
+                line-height: 0.8em;
+            }
+            /* Two-column layout */
+            .left-column {
+                color: #777;
+                width: 20%;
+                height: 92%;
+                float: left;
+            }
+            .left-column h2:last-of-type, .left-column h3:last-child {
+                color: #000;
+            }
+            .right-column {
+                width: 75%;
+                float: right;
+                padding-top: 1em;
+            }
+        </style>
+        <style>
+            /* Para deshabilitar la opción de selección */
+            .noselect {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            .vertical-middle-align {
+                vertical-align: middle;
+            }
+            .nou {
+                text-decoration: none
+            }
+        </style>
+    </head>
+    <body class="noselect">
+        <textarea id="source">
+
+class: center, middle
+
+# Usabilidad y Accesibilidad
+# .red[**Criterios - Técnicas WCAG 2.1**]
+## 1ª parte
+
+**Grupo 6** | Borja | Alexandre | Manuel
+
+---
+# Pautas de Accesibilidad para el Contenido Web (WCAG)
+
+Las Pautas de Accesibilidad para el Contenido Web (Web Content Accessibility Guidelines) cubren un amplio
+rango de recomendaciones para crear contenido Web más accesible.  
+
+--
+
+Seguir estas pautas permite crear un contenido más accesible para un mayor número de personas con algún tipo
+de disfuncionalidad: visual, auditiva, cognitiva, del habla y combinaciones de las anteriores.
+
+--
+
+Además estas pautas consiguen mejorar la experiencia internáutica en general para cualquier tipo de usuario.  
+
+--
+
+En este curso estudiaremos y pondremos en práctica la versión 2.1 de las WCAG, publicadas por el
+<img src="img/w3c.png" width="30" height="30" class="vertical-middle-align"> el 5 de junio del 2018.
+
+---
+
+## Las WCAG se edifican sobre 4 principios fundamentales
+
+**Principio 1: Perceptible** (*disfuncionalidad visual y auditiva*)  
+La información y los componentes de la interfaz de usuario deben ser presentados a los usuarios de modo que ellos
+puedan percibirlos.
+
+--
+
+**Principio 2: Operable** (*disfuncionalidad motora*)  
+Los componentes de la interfaz de usuario y la navegación deben ser operables.
+
+--
+
+**Principio 3: Comprensible** (*disfuncionalidad cognitiva*)  
+La información y el manejo de la interfaz de usuario deben ser comprensibles.
+
+--
+
+**Principio 4: Robusto**  
+El contenido debe ser suficientemente robusto como para ser interpretado de forma fiable por una amplia variedad de
+aplicaciones de usuario, incluyendo las ayudas técnicas.
+
+---
+class: center, middle
+
+#Principio 1: Perceptible (disfuncionalidad visual y auditiva)
+
+###En este seminario y en el próximo nos centraremos en el principio de **perceptibilidad**, cuyas pautas empiezan por un .red["]**1**.red["], y en este seminario en particular nos centraremos en la pauta 1.2.
+
+---
+
+# Pauta 1.2 - Medios tempodependientes
+--
+
+## Esta pauta existe para proporcionar alternativas a los medios tempodependientes.
+--
+
+###Conceptos
+--
+
+- **Medios tempodependientes:** Audio solo, vídeo solo, audio y vídeo combinado, audio y/o vídeo combinados con
+interacción.
+
+--
+    
+- **Medios sincronizados:** Audio o vídeo sincronizado con otro formato y/o con componentes interactivos.
+
+--
+    
+- **Documento alternativo al medio tempodependiente:** transcripción descriptiva con la secuencia correcta de la
+información de audio o video.
+
+---
+class: center, middle
+
+# Criterios de verificación
+
+---
+
+## Criterio 1.2.1: Solo audio/vídeo (pregrabado) <img src="img/wcag2.1A-v.svg" width="90">
+Todo audio pregrabado debe tener una alternativa que describa su contenido de forma equivalente.
+
+Todo vídeo pregrabado debe tener una alternativa o un archivo de audio asociado que describa su contenido de forma
+equivalente.
+
+Ambas normas deben cumplirse excepto en el caso en que el audio o vídeo en cuestión es en sí una alternativa multimedia
+a un texto y está correctamente etiquetado como tal.
+
+--
+
+### Técnicas Suficientes  
+<u>Si el contenido es solo audio:</u>
+- G158: Crear un documento con un texto descriptivo que explique tanto la situación como el diálogo del audio, los sonidos
+ambientales, etc. Esto se puede implementar escribiendo en el atributo alt el enlace de la transcripción alternativa.
+
+---
+
+<u>Si el contenido es solo vídeo:</u>
+- G159: Consiste en recoger en un documento toda la información que aparece en el vídeo, describiendo la historia, diálogos,
+cada escenario, acción, expresión, etc. Se implementa de la misma manera que la técnica G158.
+
+--
+
+### Errores
+- F30: Usar un texto alternativo que no proporcione la misma información que el elemento multimedia al que está sustituyendo.
+Por ejemplo, usar el campo de descripción del elemento para poner solo el nombre del fichero que lo contiene.
+- F67: Usar una texto descriptivo (descripción larga completa) alternativo que no representa la misma información que el
+elemento multimedia al que sustituye. Por ejemplo, describir vagamente la situación de los elementos en un entorno sin especificar
+su localización exacta.
+
+---
+
+### Ejemplos
+
+**Si el contenido es solo audio:**
+
+[Ejemplo de cumplimiento del criterio](https://play.cadenaser.com/audio/001RD010000005460400/)  
+[Ejemplo de incumplimiento del criterio](https://www.march.es/conferencias/anteriores/voz.aspx?p1=21729)
+
+--
+
+**Si el contenido es solo video:**
+
+[Ejemplo de cumplimiento del criterio](#23)  
+[Ejemplo de incumplimiento del criterio](#23)
+
+---
+
+## Criterio 1.2.2: Subtítulos (pregrabado) <img src="img/wcag2.1A-v.svg" width="90">
+Todo contenido multimedia visual debe tener subtítulos sincronizados que se correspondan con su audio, excepto cuando el contenido
+multimedia es una alternativa a contenido textual y está correctamente etiquetado como tal.
+
+### Técnicas Suficientes
+- G93: Transcribir todo el diálogo, así como los sonidos relevantes del vídeo a texto incrustado en el mismo. No deben confundirse
+con los subtítulos, ya que estos incluyen únicamente la transcripción de los diálogos. 
+
+- G87: Similar a la técnica anterior, solo que en esta el texto transcrito se oculta a menos que el usuario lo active, mostrándose
+solo cuando es necesario. Requiere soporte desde el agente de usuario.
+
+---
+
+### Errores
+- F8: Usar un texto que no transcriba completamente todo el diálogo y los sonidos importantes del vídeo. Se debe tener en cuenta que
+a veces se simplifican los diálogos para facilitar la lectura, lo que sigue considerándose válido dentro del criterio.
+
+- F74: Situación en la que los elementos multimedia alternativos a un texto (audio, vídeo, etc explicativos) no están relacionados
+correctamente con el mismo, por lo que los usuarios pueden tener dificultades encontrando el texto al que se refiere el elemento o
+el vídeo que les explique el texto.
+
+--
+
+### Ejemplos
+
+[Ejemplo de cumplimiento del criterio](https://www.youtube.com/watch?v=Jd_bRKjdre4)  
+
+[Ejemplo de incumplimiento del criterio](https://www.lasexta.com/programas/el-intermedio/revista-medios/el-cuento-de-la-burrada-el-analisis-de-el-intermedio-sobre-las-polemicas-propuestas-de-pablo-casado-sobre-las-mujeres-video_201903145c8ac5b70cf2bb98bdcfccdc.html)
+
+---
+
+## Criterio 1.2.3: Descripción de Audio o Medio Alternativo (pregrabado) <img src="img/wcag2.1A-v.svg" width="90">
+La finalidad de este criterio es de proporcionar a las personas ciegas o discapacitados visuales una alternativa para acceder a la
+información presente en un video grabado previamente, excepto cuando el propio medio ya es un medio alternativo de texto y ya está
+etiquetado como tal.
+- Una descripción de audio (audiodescripción) del video pero de forma aumentada con la información necesaria: Se aprovechará las
+pausas de diálogo del vídeo para describir los hechos que ocurren, los personajes, cambios de escenas, texto presente en el vídeo,
+etc. que sean importantes para entender el medio  y que no estén ya presentes en la pista de audio.
+- Ofrecer toda la información del medio (tanto visual como auditiva) de modo textual. Esta alternativa se presenta como si fuera un
+guión del video o en forma de adaptación en forma de  libro. A diferencia de la descripción de audio, aquí se puede permitir añadir
+todavía más contexto y contenido: toda la información visual del medio, escenarios, paisajes, las expresiones de los actores, sonidos
+como risas y voces de terceros, con lo cual se tiene un a alternativa mucho más precisa y fiel del medio original que la descripción
+de audio  
+
+---
+
+### Técnicas Suficientes
++ G69: Proveer una alternativa a medios tempodependientes usando una de las sig. técnicas:  
+    - G58: Colocar un enlace a su alternativa inmediatamente después al contenido no textual.  
+    - SL17: Dar un contenido alternativo estático para Silverlight Media reproduciéndose en un MediaElement.  
++ Enlazar a la alternativa del medio tempodependiente usando la sig. técnica:
+    - H53: Usar el cuerpo del objeto ‘element’ de HTML5.
++ G78: Proveer de una segunda pista de audio seleccionable por el usuario que incluya descripciones de audio.
++ G173: Ofrecer una versión de una película con descripciones de audio usando una de las sig. técnicas:
+    - SM6: Proveer la descripción de audio en SMIL 1.0.
+    - SM7: Proveer la descripción de audio en SMIL 2.0. 
+    - FLASH26: Aplicando decripciones de audio en Flash video.
+    - Usar cualquier reproductor que soporte audio y video.
+
+---
+
+### Errores
+No hay errores documentados en las WCAG para el criterio 1.2.3
+
+--
+
+### Ejemplos
+
+[Ejemplo de cumplimiento de criterio](http://www.rtve.es/alacarta/videos/programa/ministerio-del-tiempo-audiodescripcion/3992601/):
+audiodescripción.
+
+[Ejemplo de incumplimiento de criterio](http://www.rtve.es/alacarta/videos/cuentame-como-paso/cuentame-como-paso-19-capitulo-348-buscando/4865379/):
+ofrece subtítulos pero no presenta audiodescripción ni enlace a todo texto aumentado completo en forma de guión o libro.
+
+.red[NOTA:] Si toda la información de video está incluida en la pista de audio, no es necesaria la descripción de audio
+
+---
+
+## Criterio 1.2.4: Subtítulos (en directo)  <img src="img/wcag2.1AA-v.svg" width="90">
+Todo contenido multimedia visual (en directo) debe tener subtítulos sincronizados que se correspondan con su audio, excepto cuando
+el contenido multimedia es una alternativa a contenido textual y está correctamente etiquetado como tal.
+
+--
+
+### Técnicas Suficientes
+1. G9 Y G93.
+2. G9 Y G87.  
++ G9: Creación de subtítulos para audio y vídeo sincronizados en directo. Posible uso de tecnología text-2-speech en tiempo real.  
++ G93: Transcribir todo el diálogo, así como los sonidos relevantes del vídeo a texto incrustado en el mismo. No deben confundirse
+con los subtítulos, ya que estos incluyen únicamente la transcripción de los diálogos.  
++ G87: Similar a la técnica anterior, solo que en esta el texto transcrito se oculta a menos que el usuario lo active, mostrándose
+solo cuando es necesario. Requiere soporte desde el agente de usuario.
+
+---
+
+### Errores
+No hay errores documentados en las WCAG para el criterio 1.2.4.
+
+--
+
+### Ejemplos
++ [Ejemplo de cumplimiento del criterio](https://content.uplynk.com/player5/2Oa1KmupigQwmSr4hyCwCksc.html): un estudio de televisión
+que usa un servicio de subtitulado en tiempo real para sus noticias nocturnas  
++ [Ejemplo de cumplimiento del criterio](http://www.rtve.es/alacarta/videos/telediario/telediario-21-horas-19-03-19-lengua-signos/5075739/):
+un estudio de televisión que usa un servicio de lenguaje de signos en tiempo real para sus noticias nocturnas
++ Ejemplo de incumplimiento del criterio: no aplicable para el criterio 1.2.4.
+
+---
+
+## Criterio 1.2.5: Audiodescripción (pregrabado)  <img src="img/wcag2.1AA-v.svg" width="90">
+Todo contenido multimedia visual (pregrabado) debe tener una audiodescripción de lo que ocurre en el vídeo, excepto cuando el contenido
+multimedia es una  alternativa a contenido textual y está correctamente etiquetado como tal.
+
+--
+
+### Técnicas Suficientes
+1. G78
+2. G173
++ G78: Proveer de una segunda pista de audio que incluya la audiodescripción del video, que pueda ser activada/desactivada por el usuario a
+voluntad.
++ G173: Proveer de una versión específica del video que disponga de la audiodescripción usando alguna de las siguientes técnicas:
+    - SM6: Proveer de una audiodescripción para el estándar SMIL 1.0.
+    - SM7: Proveer de una audiodescripción para el estándar SMIL 2.0.
+    - FLASH26: Proveer de una audiodescripción en formato Flash.
+    - Usar un reproductor que soporte audio y vídeo.
+
+---
+
+### Errores
+No hay errores documentados en las WCAG para el criterio 1.2.5.
+
+--
+
+### Ejemplos
++ [Ejemplo de cumplimiento del criterio](https://www.youtube.com/watch?v=O7j4_aP8dWA): cualquier video/película con una pista de audiodescripción
++ Ejemplo de incumplimiento del criterio: no aplicable para el criterio 1.2.5.
+
+---
+class: center, middle
+
+### Presentación realizada con
+<a href="http://github.com/gnab/remark" target="_blank" class="nou">
+```
+[REMARK](http://github.com/gnab/remark)
+```
+</a>
+### Bibliografía
+<a href="https://www.w3.org/TR/WCAG21" target="_blank" class="nou">
+```
+[WCAG 2.1](https://www.w3.org/TR/WCAG21)
+```
+</a>
+
+---
+class: center, middle
+
+# **APLAUSOS**
+
+        </textarea>
+        <!-- <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script> -->
+        <script src="js/remark-latest.min.js"></script>
+        <script>
+            // This is used with the next commented script
+            //var hljs = remark.highlighter.engine;
+        </script>
+        <!-- <script src="js/remark.language.js"></script> -->
+        <script>
+            //var slideshow = remark.create();
+        
+        var slideshow = remark.create({
+            /*
+            Set the slideshow display ratio
+            Default: '4:3'
+            Alternatives: '16:9', ...
+            */
+            ratio: '4:3',
+
+            /*
+            Navigation options
+            */
+            navigation: {
+                /*
+                Enable or disable navigating using scroll
+                Default: true
+                */
+                scroll: true,
+                /*
+                Enable or disable navigation using touch
+                Default: true
+                */
+                touch: true,
+                /*
+                Enable or disable navigation using click
+                Default: false
+                */
+                click: false
+            },
+
+            /*
+            Customize slide number label, either using a format string...
+            */
+            //slideNumberFormat: 'Slide %current% of %total%',
+            slideNumberFormat: '%current%/%total%',
+            /*
+            ...or by using a format function
+            */
+            //slideNumberFormat: function (current, total) {
+            //    return 'Slide ' + current + ' of ' + total;
+            //},
+            
+            /*
+            Enable or disable counting of incremental slides in the slide counting
+            */
+            countIncrementalSlides: false,
+            
+            /*
+            Provide a source markdown for slides explicitly as an option 
+            instead of the textarea with id="source"
+            Default: undefined
+            Alternatives: 'Slide 1\n---\nSlide 2', ...
+            */
+            //source: undefined,
+            
+            /*
+            Read source markdown for slides from URL (local or external) instead 
+            of the textarea with id="source"
+            Default: undefined
+            Alternatives: 'some_file.md', 'https://example.host.com/file.md', ...
+            */
+            //sourceUrl: undefined,
+
+            /*
+            Highlight options
+            */
+            // Set highlight style for syntax highlighting
+            highlightStyle: 'monokai',
+            // Set default language for syntax highlighting
+            highlightLanguage: 'remark',
+            // Highlight background of code lines prefixed with *
+            highlightLines: true,
+            // Inside code blocks, highlight (the background of) content between special delimiters.
+            highlightSpans: false
+        });
+        </script>
+    </body>
+</html>
